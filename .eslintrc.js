@@ -15,15 +15,20 @@ module.exports = {
   plugins: ["@typescript-eslint", "sort", "json-format", "prettier"],
   root: true,
   rules: {
-    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "@typescript-eslint/no-var-requires": "warn",
+    "curly": ["error", "multi", "consistent"],
+    "no-empty": "warn",
+    "no-var": "warn",
     "prettier/prettier": [
       "error",
       {
+        bracketSpacing: true,
         endOfLine: "lf",
         printWidth: 80,
         quoteProps: "consistent",
         semi: true,
-        trailingComma: "all",
+        trailingComma: "es5",
       },
     ],
     "sort/type-properties": "error",
